@@ -14,6 +14,10 @@ const StationFinder = ({selectedStation, setSelectedStation, stations}) => {
 
     useEffect(() => {
         if (selectedStation) {
+            getTrainPredictions(selectedStation.Codes)
+                .then((r) => {
+                    setIncomingTrains(r.data.Trains)
+                })
             clearInterval(intervalId)
             setIntervalId(setInterval(function() {getTrainPredictions(selectedStation.Codes)
                 .then((r) => {
