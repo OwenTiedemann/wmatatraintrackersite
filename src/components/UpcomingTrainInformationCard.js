@@ -17,7 +17,6 @@ function getLineColor(line) {
 }
 
 function boardingInformation(min) {
-    console.log(parseInt(min))
     if (min !== "BRD" && min !== "ARR") {
         return (`${min} min`)
     } else {
